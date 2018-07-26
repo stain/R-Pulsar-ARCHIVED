@@ -29,6 +29,9 @@ import net.tomp2p.peers.PeerAddress;
  *
  * @author eduard
  */
+
+//Matt K's Version
+
 public class Core {
     
     public static void main(String[] args) throws InterruptedException, IOException, InvalidKeySpecException, ClassNotFoundException {
