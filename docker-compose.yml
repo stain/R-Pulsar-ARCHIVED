@@ -1,0 +1,78 @@
+version: "3"
+services:
+ rp:
+  # service for rp
+  image: mkurt26/rpulsar:latest
+  environment:
+   - MAIN=com.rutgers.Core.Core
+   - location=-l x
+   - port=-p 5000
+   - gps=-gps 40:-74
+  deploy:
+   replicas: 1
+   resources:
+    limits:
+     cpus: "0.1"
+     memory: 50M
+   restart_policy:
+    condition: on-failure
+  ports:
+   - "5000:5000"
+  networks:
+   mynetwork:
+    ipv4_address: 10.5.0.4
+
+ consumer:
+  # service for consumer
+  image: mkurt26/rpulsar:latest
+  environment:
+   - MAIN=com.rutgers.Examples.Consumer
+  deploy:
+   replicas: 1
+   resources:
+    limits:
+     cpus: "0.1"
+     memory: 50M
+   restart_policy:
+    condition: on-failure
+  ports:
+   - "5002:5002"
+  depends_on:
+   - rp
+  networks:
+   mynetwork:
+    ipv4_address: 10.5.0.5
+
+ producer:
+  # service for producer
+  image: mkurt26/rpulsar:latest
+  environment:
+   - MAIN=com.rutgers.Examples.Publisher
+  deploy:
+   replicas: 1
+   resources:
+    limits:
+     cpus: "0.1"
+     memory: 50M
+   restart_policy:
+    condition: on-failure   
+  ports:
+   - "5001:5001"
+  depends_on:
+   - consumer
+  networks:
+   mynetwork:
+    ipv4_address: 10.5.0.6
+
+networks:
+ mynetwork:
+  driver: overlay
+  ipam:
+   config:
+    - subnet: 10.5.0.0/16
+     
+
+   
+
+
+
