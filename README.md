@@ -1,4 +1,23 @@
-(This is Matthew Kurtanick's Import of the Rutgers-Pulsar Repo for testing purposes)
+# R-Pulsar
+
+This is the fork of _Matthew Kurtanick's Import_ of the repository formarly located at `egibert/Rutgers-Pulsar` aka <https://github.com/egibert/Rutgers-Pulsar> which has since been removed by the original author.
+
+It is provided here for **archival purposes only**, pull requests are not supported. For later (non-open source) developments see <https://rpulsar.rdi2.rutgers.edu/>
+
+Related publications:
+
+* <https://arxiv.org/abs/1808.01353>
+* <https://doi.org/10.1109/FAS-W.2017.173>
+* <https://doi.org/10.1109/ICFEC.2017.18>
+* <https://doi.org/10.1109/eScience.2017.52>
+
+
+This repository is **not** to be confused with [Apache Pulsar](http://pulsar.apache.org/) which is a pub/sub messaging infrarstructure that was donated to ASF by Yahoo.
+
+Below is the README as preserved in the `mkurt26/RDI2_Internship` repository:
+
+-----
+
 
 # Rutgers-Pulsar
 A real-time data analytics software stack that can be deployed on edge resources to support data-driven, location- and resource-aware stream processing.
